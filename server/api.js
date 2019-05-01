@@ -19,14 +19,14 @@ router.get("/search", async (req, res) => {
 	try {
 		const flights = await request(token).post(`/search?time=${Date.now()}`, {
 			tripType: "RT",
-			from: "CNF", //origem
-			to: "BSB", //destino
-			outboundDate: outboundDate.format("YYYY-MM-DD"), //data de partida
-			inboundDate: inboundDate.format("YYYY-MM-DD"), //data de volta
-			cabin: "EC", //classe econômica (EC) ou executiva (EX)
-			adults: 2, //adultos
-			children: 1, //crianças
-			infants: 0, //bebês
+			from: "CNF",
+			to: "BSB",
+			outboundDate: outboundDate.format("YYYY-MM-DD"),
+			inboundDate: inboundDate.format("YYYY-MM-DD"),
+			cabin: "EC",
+			adults: 2,
+			children: 1,
+			infants: 0,
 		});
 
 		const searchId = flights.id;
